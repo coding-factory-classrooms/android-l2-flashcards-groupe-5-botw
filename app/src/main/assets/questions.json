@@ -1,83 +1,85 @@
 {
   "Bokoblin": {
-    "Combien de tenue différentes la princesse Zelda porte t-elle dans les souvenirs ?": {
+    "0": {
+      "question": "Combien de tenue différentes la princesse Zelda porte t-elle dans les souvenirs ?",
       "imageName": 0,
-      "good answer": "4",
-      "bad anwsers": ["3", "2", "5"]
+      "goodAnswer": "4",
+      "badAnswers": ["3", "2", "5"]
     },
-    "Quelle couleur de monstre est la plus robuste ?": {
+    "1": {
+      "question": "Quelle couleur de monstre est la plus robuste ?",
       "imageName": 0,
-      "good answer": "Doré",
-      "bad anwsers": ["Argenté", "Platine", "Noir"]
+      "goodAnswer": "Doré",
+      "badAnswers": ["Argenté", "Platine", "Noir"]
     },
     "A quelle élément cette ombre de Ganon correspond ?": {
       "imageName": 0,
-      "good answer": "Foudre",
-      "bad anwsers": ["Vent", "Feu", "Eau"]
+      "goodAnswer": "Foudre",
+      "badAnswers": ["Vent", "Feu", "Eau"]
     },
     "Quel dragon a besoin d'être purifié ?": {
       "imageName": 0,
-      "good answer": "Nédrac",
-      "bad anwsers": ["Ordrac", "Rordrac"]
+      "goodAnswer": "Nédrac",
+      "badAnswers": ["Ordrac", "Rordrac"]
     },
     "Combien d'années se sont écoulées depuis l'attaque du fléau et le moment d'action du jeu ?": {
       "imageName": 0,
-      "good answer": "100 ans",
-      "bad anwsers": ["10 ans", "50 ans", "1000 ans"]
+      "goodAnswer": "100 ans",
+      "badAnswers": ["10 ans", "50 ans", "1000 ans"]
     },
     "Combien de \"Grande fée\" il y a t-il dans Hyrule ?": {
       "imageName": 0,
-      "good answer": "5 fées",
-      "bad anwsers": ["4 fées", "6 fées", "3 fées"]
+      "goodAnswer": "5 fées",
+      "badAnswers": ["4 fées", "6 fées", "3 fées"]
     }
   },
   "Lezalfos": {
     "Combien de cœur sont consommés pour sortir l'épée de légende ?": {
       "imageName": 0,
-      "good answer": "12 3/4",
-      "bad anwsers": ["12 1/4", "12 1/2", "Aucun, c'est Link après tout"]
+      "goodAnswer": "12 3/4",
+      "badAnswers": ["12 1/4", "12 1/2", "Aucun, c'est Link après tout"]
     },
     "Ordrac, Nédrac, Rordrac sont respectivement les gardiens des sources :": {
       "imageName": 0,
-      "good answer": "Force, Sagesse, Courage",
-      "bad anwsers": ["Force, Courage, Sagesse", "Sagesse, Courage, Force", "Sagesse, Force, Courage", "Courage, Sagesse, Force", "Courage, Force, Sagesse"]
+      "goodAnswer": "Force, Sagesse, Courage",
+      "badAnswers": ["Force, Courage, Sagesse", "Sagesse, Courage, Force", "Sagesse, Force, Courage", "Courage, Sagesse, Force", "Courage, Force, Sagesse"]
     },
     "Quels sont les personnes qui viennent aider Grossaillieh pour la construction du village d'Euzero ?": {
       "imageName": 0,
-      "good answer": "Shantieh, Kornuillieh, Klavieh et Pervieh",
-      "bad anwsers": ["Santieh, Cornuillieh, Clavieh et Épervieh", "Mortieh, Sérasieh, Deza et Nad"]
+      "goodAnswer": "Shantieh, Kornuillieh, Klavieh et Pervieh",
+      "badAnswers": ["Santieh, Cornuillieh, Clavieh et Épervieh", "Mortieh, Sérasieh, Deza et Nad"]
     },
     "Quel est le nom complet du roi d'Hyrule ?": {
       "imageName": 0,
-      "good answer": "Rhoam Bosphoramus Hyrule",
-      "bad anwsers": ["Romuald Bosphoramus Hyrule", "Rhum Bosphoramus Hyrule", "Gustave Bosphoramus Hyrule"]
+      "goodAnswer": "Rhoam Bosphoramus Hyrule",
+      "badAnswers": ["Romuald Bosphoramus Hyrule", "Rhum Bosphoramus Hyrule", "Gustave Bosphoramus Hyrule"]
     },
     "Où se trouve le cheval Alpha ?": {
       "imageName": 0,
-      "good answer": "Mont Satori",
-      "bad anwsers": ["Collines d'Hébra", "Mont de la divinité équine", "Prairie d'Obbaba"]
+      "goodAnswer": "Mont Satori",
+      "badAnswers": ["Collines d'Hébra", "Mont de la divinité équine", "Prairie d'Obbaba"]
     }
   },
   "Lynel": {
     "Comment s'appelle ce boss (DLC)": {
       "imageName": 0,
-      "good answer": "Monk Maz Koshia",
-      "bad anwsers": ["Mank Muzi Koshiu", "Monki Muz Kashiu", "Mak Muza Koshi", "Muk Miza Kosh"]
+      "goodAnswer": "Monk Maz Koshia",
+      "badAnswers": ["Mank Muzi Koshiu", "Monki Muz Kashiu", "Mak Muza Koshi", "Muk Miza Kosh"]
     },
     "Quels sont les noms respectifs des fées ?": {
       "imageName": 0,
-      "good answer": "Tera, Cotura, Mijah, Caesa",
-      "bad anwsers": ["Caesa, Tera, Mijah, Cotura", "Mijah, Caesa, Tera, Cotura", "Tera, Mijah, Caesa, Cotura"]
+      "goodAnswer": "Tera, Cotura, Mijah, Caesa",
+      "badAnswers": ["Caesa, Tera, Mijah, Cotura", "Mijah, Caesa, Tera, Cotura", "Tera, Mijah, Caesa, Cotura"]
     },
     "Combien d'anarchements pour chevaux existe-t'il ?": {
       "imageName": 0,
-      "good answer": "8",
-      "bad anwsers": ["4", "7", "10"]
+      "goodAnswer": "8",
+      "badAnswers": ["4", "7", "10"]
     },
     "Comment obtient t-on la recette du Pilaf de volaille divine ?": {
       "imageName": 0,
-      "good answer": "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre.",
-      "bad anwsers": ["Volaille divine, Boisseau de riz, Oeuf de volatile, Cristal de sel", "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre, Viande."]
+      "goodAnswer": "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre.",
+      "badAnswers": ["Volaille divine, Boisseau de riz, Oeuf de volatile, Cristal de sel", "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre, Viande."]
     }
   }
 }

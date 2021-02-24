@@ -2,12 +2,16 @@ package com.aph.flashcard_botw;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -15,6 +19,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class FlashCardActivity extends AppCompatActivity {
 
@@ -39,27 +47,32 @@ public class FlashCardActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(string);
             JSONObject bokoblin = jsonObject.getJSONObject("Bokoblin");
             Log.i("jsonobject", bokoblin + "");
+
+            JSONObject questionInfo = bokoblin.getJSONObject("0");
+
+            String question = questionInfo.getString("question");
+
+            TextView questionText = findViewById(R.id.questionTextView);
+            questionText.setText(question);
+
+            String goodAnswer = questionInfo.getString("goodAnswer");
+            JSONArray badAnswers = questionInfo.getJSONArray("badAnswers");
+            ArrayList <String> answers = new ArrayList<String>();
+            answers.add(goodAnswer);
+            for (int i = 0; i < badAnswers.length(); i++) {
+                answers.add(badAnswers.getString(i));
+            }
+            Collections.shuffle(answers);
+
+            RadioGroup answerRadioGroup = findViewById(R.id.answerRadioGroup);
+            for (int j = 0; j < answers.size(); j++) {
+                RadioButton answerButton = new RadioButton(this);
+                answerButton.setText(answers.get(j));
+                answerRadioGroup.addView(answerButton);
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.i("string", string);
-
-       /* try {
-            InputStreamReader jsonFile = new InputStreamReader(getAssets().open("questions.json"));
-            BufferedReader bReader = new BufferedReader(jsonFile);
-            String line = bReader.readLine();
-            StringBuffer buff = new StringBuffer();
-            while (line != null) {
-                buff.append(line);
-                line = bReader.readLine();
-            }
-            Log.i("buffToString", buff.toString());
-            Object obj = jsonP.parse(buff.toString());
-            JSONArray questionsList = (JSONArray) obj;
-            Log.i("jsonReader", String.valueOf(questionsList));
-
-        } catch (IOException | ParseException e) {
-            Log.e("ReadJsonFailed", String.valueOf(e));
-        }*/
     }
 }
