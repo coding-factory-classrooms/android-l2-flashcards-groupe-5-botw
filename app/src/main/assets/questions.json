@@ -66,8 +66,8 @@
     },
     "Quels sont les noms respectifs des fées ?": {
       "imageName": 0,
-      "good answer": "Caesa, Tera, Mijah, Cotura",
-      "bad anwsers": ["4 fées", "6 fées", "3 fées"]
+      "good answer": "Tera, Cotura, Mijah, Caesa",
+      "bad anwsers": ["Caesa, Tera, Mijah, Cotura", "Mijah, Caesa, Tera, Cotura", "Tera, Mijah, Caesa, Cotura"]
     },
     "Combien d'anarchements pour chevaux existe-t'il ?": {
       "imageName": 0,
