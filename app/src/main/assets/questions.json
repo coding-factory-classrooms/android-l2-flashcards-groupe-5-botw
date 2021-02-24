@@ -1,7 +1,7 @@
 {
   "Bokoblin": {
     "0": {
-      "question": "Combien de tenue différentes la princesse Zelda porte t-elle dans les souvenirs ?",
+      "question": "Combien de tenues différentes la princesse Zelda porte-t-elle dans les souvenirs ?",
       "imageName": "zelda",
       "goodAnswer": "4",
       "badAnswers": ["3", "2", "5"]
@@ -31,7 +31,7 @@
       "badAnswers": ["10 ans", "50 ans", "1000 ans"]
     },
     "5": {
-      "question": "Combien de \"Grande fée\" il y a t-il dans Hyrule ?",
+      "question": "Combien de \"Grandes fées\" y a t-il dans Hyrule ?",
       "imageName": 0,
       "goodAnswer": "5 fées",
       "badAnswers": ["4 fées", "6 fées", "3 fées"]
@@ -83,7 +83,7 @@
       "badAnswers": ["Caesa, Tera, Mijah, Cotura", "Mijah, Caesa, Tera, Cotura", "Tera, Mijah, Caesa, Cotura"]
     },
     "2": {
-      "question": "Combien d'anarchements pour chevaux existe-t'il ?",
+      "question": "Combien d'harnachement pour chevaux existe-t'il ?",
       "imageName": 0,
       "goodAnswer": "8",
       "badAnswers": ["4", "7", "10"]
