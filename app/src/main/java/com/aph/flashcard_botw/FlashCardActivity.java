@@ -38,6 +38,8 @@ public class FlashCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flash_card);
 
         JSONParser jsonP = new JSONParser();
+        Intent srcIntent = getIntent();
+        String difficulty = srcIntent.getStringExtra("difficulty");
 
         String string = "";
         try {
@@ -51,7 +53,7 @@ public class FlashCardActivity extends AppCompatActivity {
         }
         try {
             JSONObject jsonObject = new JSONObject(string);
-            JSONObject bokoblin = jsonObject.getJSONObject("Bokoblin");
+            JSONObject bokoblin = jsonObject.getJSONObject(difficulty);
             Log.i("jsonobject", bokoblin + "");
 
             JSONObject questionInfo = bokoblin.getJSONObject("0");
