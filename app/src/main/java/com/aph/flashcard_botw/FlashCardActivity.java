@@ -72,7 +72,6 @@ public class FlashCardActivity extends AppCompatActivity {
             Context context = questionImage.getContext();
             int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
             questionImage.setImageResource(id);
-            //questionImage.setImageResource(Integer.parseInt("R.drawable" + image));
 
         } catch (JSONException e) {
             e.printStackTrace();

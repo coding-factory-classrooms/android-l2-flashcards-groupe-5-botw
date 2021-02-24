@@ -13,7 +13,7 @@
       "badAnswers": ["Argenté", "Platine", "Noir"]
     },
     "A quelle élément cette ombre de Ganon correspond ?": {
-      "imageName": "thunderblight_ganon.png",
+      "imageName": "thunderblight_ganon",
       "goodAnswer": "Foudre",
       "badAnswers": ["Vent", "Feu", "Eau"]
     },
@@ -67,7 +67,7 @@
       "badAnswers": ["Mank Muzi Koshiu", "Monki Muz Kashiu", "Mak Muza Koshi", "Muk Miza Kosh"]
     },
     "Quels sont les noms respectifs des fées ?": {
-      "imageName": "great_fairies.png",
+      "imageName": "great_fairies",
       "goodAnswer": "Tera, Cotura, Mijah, Caesa",
       "badAnswers": ["Caesa, Tera, Mijah, Cotura", "Mijah, Caesa, Tera, Cotura", "Tera, Mijah, Caesa, Cotura"]
     },
@@ -77,7 +77,7 @@
       "badAnswers": ["4", "7", "10"]
     },
     "Comment obtient t-on la recette du Pilaf de volaille divine ?": {
-      "imageName": "rito_village.png",
+      "imageName": "rito_village",
       "goodAnswer": "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre.",
       "badAnswers": ["Volaille divine, Boisseau de riz, Oeuf de volatile, Cristal de sel", "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre, Viande."]
     }
