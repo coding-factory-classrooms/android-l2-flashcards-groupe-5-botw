@@ -1,8 +1,9 @@
 package com.aph.flashcard_botw;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -13,15 +14,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class FlashCardActivity extends AppCompatActivity {
@@ -70,6 +66,13 @@ public class FlashCardActivity extends AppCompatActivity {
                 answerButton.setText(answers.get(j));
                 answerRadioGroup.addView(answerButton);
             }
+
+            String image = questionInfo.getString("imageName");
+            ImageView questionImage = findViewById(R.id.imageView);
+            Context context = questionImage.getContext();
+            int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
+            questionImage.setImageResource(id);
+            //questionImage.setImageResource(Integer.parseInt("R.drawable" + image));
 
         } catch (JSONException e) {
             e.printStackTrace();
