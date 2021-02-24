@@ -8,7 +8,7 @@
     },
     "1": {
       "question": "Quelle couleur de monstre est la plus robuste ?",
-      "imageName": "zelda",
+      "imageName": "guardian",
       "goodAnswer": "Doré",
       "badAnswers": ["Argenté", "Platine", "Noir"]
     },
@@ -20,19 +20,19 @@
     },
     "3": {
       "question": "Quel dragon a besoin d'être purifié ?",
-      "imageName": "zelda",
+      "imageName": "corrupted_naydra",
       "goodAnswer": "Nédrac",
       "badAnswers": ["Ordrac", "Rordrac"]
     },
     "4": {
       "question": "Combien d'années se sont écoulées depuis l'attaque du fléau et le moment d'action du jeu ?",
-      "imageName": "zelda",
+      "imageName": "ruins",
       "goodAnswer": "100 ans",
       "badAnswers": ["10 ans", "50 ans", "1000 ans"]
     },
     "5": {
       "question": "Combien de \"Grandes fées\" y a t-il dans Hyrule ?",
-      "imageName": "zelda",
+      "imageName": "fairy",
       "goodAnswer": "5 fées",
       "badAnswers": ["4 fées", "6 fées", "3 fées"]
     }
@@ -40,41 +40,41 @@
   "Lezalfos": {
     "0": {
       "question": "Combien de cœur sont consommés pour sortir l'épée de légende ?",
-      "imageName": "zelda",
+      "imageName": "master_sword",
       "goodAnswer": "12 3/4",
       "badAnswers": ["12 1/4", "12 1/2", "Aucun, c'est Link après tout"]
     },
     "1": {
       "question": "Ordrac, Nédrac, Rordrac sont respectivement les gardiens des sources :",
-      "imageName": "zelda",
+      "imageName": "naydra",
       "goodAnswer": "Force, Sagesse, Courage",
       "badAnswers": ["Force, Courage, Sagesse", "Sagesse, Courage, Force", "Sagesse, Force, Courage", "Courage, Sagesse, Force", "Courage, Force, Sagesse"]
     },
     "2": {
       "question": "Quels sont les personnes qui viennent aider Grossaillieh pour la construction du village d'Euzero ?",
-      "imageName": "zelda",
+      "imageName": "tarrey_town",
       "goodAnswer": "Shantieh, Kornuillieh, Klavieh et Pervieh",
       "badAnswers": ["Santieh, Cornuillieh, Clavieh et Épervieh", "Mortieh, Sérasieh, Deza et Nad"]
     },
     "3": {
       "question": "Quel est le nom complet du roi d'Hyrule ?",
-      "imageName": "zelda",
+      "imageName": "king_rhoam",
       "goodAnswer": "Rhoam Bosphoramus Hyrule",
       "badAnswers": ["Romuald Bosphoramus Hyrule", "Rhum Bosphoramus Hyrule", "Gustave Bosphoramus Hyrule"]
     },
     "4": {
       "question": "Où se trouve le cheval Alpha ?",
-      "imageName": "zelda",
+      "imageName": "horse",
       "goodAnswer": "Mont Satori",
-      "badAnswers": ["Collines d'Hébra", "Mont de la divinité équine", "Prairie d'Obbaba"]
+      "badAnswers": ["Ruines du parc Sandine", "Mont de la divinité équine", "Prairie d'Obbaba"]
     }
   },
   "Lynel": {
     "0": {
-      "question": "Comment s'appelle ce boss (DLC)",
-      "imageName": "zelda",
-      "goodAnswer": "Monk Maz Koshia",
-      "badAnswers": ["Mank Muzi Koshiu", "Monki Muz Kashiu", "Mak Muza Koshi", "Muk Miza Kosh"]
+      "question": "Comment s'appelle ce boss",
+      "imageName": "dlc_boss",
+      "goodAnswer": "Guide Miz'Kyosia",
+      "badAnswers": ["Sage Miz'Kyosia", "Sage Miz'Kyasi", "Guide Miz'Kyasi"]
     },
     "1": {
       "question": "Quels sont les noms respectifs des fées ?",
@@ -84,7 +84,7 @@
     },
     "2": {
       "question": "Combien d'harnachement pour chevaux existe-t'il ?",
-      "imageName": "zelda",
+      "imageName": "horse_bis",
       "goodAnswer": "8",
       "badAnswers": ["4", "7", "10"]
     },
