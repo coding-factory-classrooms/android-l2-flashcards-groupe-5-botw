@@ -18,13 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class FlashCardActivity extends AppCompatActivity {
 
@@ -36,6 +34,8 @@ public class FlashCardActivity extends AppCompatActivity {
     private String image;
     private ArrayList<JSONObject> questionList;
     private int questionIndex = 0;
+    private int goodAnswersTotal = 0;
+    private String difficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class FlashCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flash_card);
 
         Intent srcIntent = getIntent();
-        String difficulty = srcIntent.getStringExtra("difficulty");
+        difficulty = srcIntent.getStringExtra("difficulty");
 
         String string = "";
         try {
@@ -136,9 +136,10 @@ public class FlashCardActivity extends AppCompatActivity {
 
                 if (selectedAnswer == goodAnswer) {
                     responseTextView.setText("Tintintintin");
+                    goodAnswersTotal++;
                 }
                 else {
-                    responseTextView.setText("T'es pourri mec");
+                    responseTextView.setText("T'es trop faible, va faire des sanctuaires et reviens après !");
                 }
 
                 questionIndex ++;
@@ -158,6 +159,18 @@ public class FlashCardActivity extends AppCompatActivity {
                 nextQuestionButton.setVisibility(View.GONE);
                 validateQuestionButton.setVisibility(View.VISIBLE);
                 displayQuestion();
+            }
+        });
+
+        resultQuestionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FlashCardActivity.this, ResultActivity.class);
+                //intent.putExtra("author", user);
+                intent.putExtra("totalQuestion", questionList.size());
+                intent.putExtra("goodAnswers", goodAnswersTotal);
+                intent.putExtra("difficulty", difficulty);
+                startActivity(intent);
             }
         });
 
