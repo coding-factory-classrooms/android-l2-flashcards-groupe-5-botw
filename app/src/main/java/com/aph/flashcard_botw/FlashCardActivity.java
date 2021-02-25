@@ -73,11 +73,11 @@ public class FlashCardActivity extends AppCompatActivity {
 
         //If it's only one question (from ListQuestionActivity)
         else{
-            //Het the questions from extra
+            //Get the questions from extra
             Questions q = srcIntent.getParcelableExtra("question");
             try {
                 String string = "";
-                //get the questions list from json (for get threst of the infos of the question)
+                //get the questions list from json (for get the rest of the infos of the question)
                 InputStream inputStream = getAssets().open("questions.json");
                 int size = inputStream.available();
                 byte[] buffer = new byte[size];
@@ -128,6 +128,7 @@ public class FlashCardActivity extends AppCompatActivity {
             Collections.shuffle(answers);
 
             RadioGroup answerRadioGroup = findViewById(R.id.answerRadioGroup);
+            answerRadioGroup.clearCheck();
             answerRadioGroup.removeAllViews(); //Clear the radioGroup from the previous question
             TextView responseTextView = findViewById(R.id.responseTextView);
             responseTextView.setText("");
@@ -165,6 +166,7 @@ public class FlashCardActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                Log.i("flashcard", radioButtonID  + "");
 
                 //if no answer selected display a toast
                 if (radioButtonID == -1) {
@@ -185,8 +187,8 @@ public class FlashCardActivity extends AppCompatActivity {
                     responseTextView.setText("T'es trop faible, va faire des sanctuaires et reviens après ! \n C'était : "+ goodAnswer);
                 }
 
-                questionIndex ++; //Increment the cirrent question index
-                //Hide the current button and display the rerquired one
+                questionIndex ++; //Increment the current question index
+                //Hide the current button and display the required one
                 validateQuestionButton.setVisibility(View.GONE);
                 if (questionIndex < questionList.size()) {
                     nextQuestionButton.setVisibility(View.VISIBLE);
@@ -200,7 +202,7 @@ public class FlashCardActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Hide the current button and display the rerquired one
+                //Hide the current button and display the required one
                 nextQuestionButton.setVisibility(View.GONE);
                 validateQuestionButton.setVisibility(View.VISIBLE);
                 displayQuestion(); //Display the new question
