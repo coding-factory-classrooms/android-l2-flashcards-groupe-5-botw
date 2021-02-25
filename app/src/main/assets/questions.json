@@ -35,6 +35,12 @@
       "imageName": "fairy",
       "goodAnswer": "5 fées",
       "badAnswers": ["4 fées", "6 fées", "3 fées"]
+    },
+    "6": {
+      "question": "Combien de korogus sont cachés en Hyrule ?",
+      "imageName": "korok",
+      "goodAnswer": "900",
+      "badAnswers": ["1000", "999", "90", "500"]
     }
   },
   "Lezalfos": {
@@ -67,6 +73,18 @@
       "imageName": "horse",
       "goodAnswer": "Mont Satori",
       "badAnswers": ["Ruines du parc Sandine", "Mont de la divinité équine", "Prairie d'Obbaba"]
+    },
+    "5": {
+      "question": "Quel compagnon peut-on avoir grâce aux Amiibo ?",
+      "imageName": "amiibo_bis",
+      "goodAnswer": "Épona et Link Loup",
+      "badAnswers": ["Épona", "Épona et Navi", "Link Loup et Midona", "Épona et Midona", "Un gardien"]
+    },
+    "6": {
+      "question": "Comment s'appelle le morse des sables de Riju ?",
+      "imageName": "morse",
+      "goodAnswer": "Madame Patricia",
+      "badAnswers": ["Patricia", "Demoiselle Patricia", "Patricia la belle gosse", "Miss patricia"]
     }
   },
   "Lynel": {
