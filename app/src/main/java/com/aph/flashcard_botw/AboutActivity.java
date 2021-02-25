@@ -16,11 +16,8 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         Intent srcIntent = getIntent();
-        User u = srcIntent.getParcelableExtra("author");
-        String versionName = srcIntent.getStringExtra("versionName");
 
         TextView nameTextView = findViewById(R.id.nameTextView);
-        nameTextView.setText(u.name);
         TextView versionTextView = findViewById(R.id.versionTextView);
         try {
             versionTextView.setText(getAppVersion());
@@ -29,6 +26,7 @@ public class AboutActivity extends AppCompatActivity {
         }
     }
 
+    //get the app version dynamically
     public String getAppVersion() throws PackageManager.NameNotFoundException {
         PackageManager manager = getApplicationContext().getPackageManager();
         PackageInfo info = manager.getPackageInfo(getApplicationContext().getPackageName(), 0);

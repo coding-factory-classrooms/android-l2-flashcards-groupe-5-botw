@@ -36,8 +36,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         holder.image.setImageResource(question.getimageId());
         holder.question.setText(question.getQuestion());
         holder.difficulty.setText(question.getDifficulty());
-        //Log.i("QuestionAdapter", "ImageId: " + question.getimageId());
-        //Log.i("QuestionAdapter", "Diificulté: " + question.getDifficulty());
         holder.itemView.setTag(question);
         holder.itemView.setOnClickListener(this);
     }
@@ -50,15 +48,14 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     @Override
     public void onClick(View v) {
         Log.d("QuestionListClick", "Click");
-            //R.id.rootQuestionItem:
         switch (v.getId()){
             case R.id.rootQuestionItem:
+                //Start a flashCardActivity with the extra needed
                 Questions question = (Questions) v.getTag();
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FlashCardActivity.class);
                 intent.putExtra("question", question);
                 intent.putExtra("isOnlyOneQuestion", true);
-                //Log.d("QuestionListClick", "onClick: " + question.toString());
                 context.startActivity(intent);
                 break;
         }
