@@ -182,7 +182,7 @@ public class FlashCardActivity extends AppCompatActivity {
                     goodAnswersTotal++; //Increment the total of good answers
                 }
                 else {
-                    responseTextView.setText("T'es trop faible, va faire des sanctuaires et reviens après !");
+                    responseTextView.setText("T'es trop faible, va faire des sanctuaires et reviens après ! \n C'était : "+ goodAnswer);
                 }
 
                 questionIndex ++; //Increment the cirrent question index
