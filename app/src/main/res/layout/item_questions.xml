@@ -7,7 +7,7 @@
     android:layout_height="70dp">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/questionImageView"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -25,15 +25,15 @@
         android:layout_marginLeft="16dp"
         android:text="difficulty"
         app:layout_constraintBottom_toTopOf="@+id/previewQuestionTextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintStart_toEndOf="@+id/questionImageView"
+        app:layout_constraintTop_toTopOf="@+id/questionImageView" />
 
     <TextView
         android:id="@+id/previewQuestionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="preview question"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/questionImageView"
         app:layout_constraintStart_toStartOf="@+id/difficultyTextView"
         app:layout_constraintTop_toBottomOf="@+id/difficultyTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
