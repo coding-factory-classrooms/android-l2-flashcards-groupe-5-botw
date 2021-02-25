@@ -1,0 +1,116 @@
+{
+  "Bokoblin": {
+    "0": {
+      "question": "Combien de tenues différentes la princesse Zelda porte-t-elle dans les souvenirs ?",
+      "imageName": "zelda",
+      "goodAnswer": "4",
+      "badAnswers": ["3", "2", "5"]
+    },
+    "1": {
+      "question": "Quelle couleur de monstre est la plus robuste ?",
+      "imageName": "guardian",
+      "goodAnswer": "Doré",
+      "badAnswers": ["Argenté", "Platine", "Noir"]
+    },
+    "2": {
+      "question": "A quelle élément cette ombre de Ganon correspond ?",
+      "imageName": "thunderblight_ganon",
+      "goodAnswer": "Foudre",
+      "badAnswers": ["Vent", "Feu", "Eau"]
+    },
+    "3": {
+      "question": "Quel dragon a besoin d'être purifié ?",
+      "imageName": "corrupted_naydra",
+      "goodAnswer": "Nédrac",
+      "badAnswers": ["Ordrac", "Rordrac"]
+    },
+    "4": {
+      "question": "Combien d'années se sont écoulées depuis l'attaque du fléau et le moment d'action du jeu ?",
+      "imageName": "ruins",
+      "goodAnswer": "100 ans",
+      "badAnswers": ["10 ans", "50 ans", "1000 ans"]
+    },
+    "5": {
+      "question": "Combien de \"Grandes fées\" y a t-il dans Hyrule ?",
+      "imageName": "fairy",
+      "goodAnswer": "5 fées",
+      "badAnswers": ["4 fées", "6 fées", "3 fées"]
+    },
+    "6": {
+      "question": "Combien de korogus sont cachés en Hyrule ?",
+      "imageName": "korok",
+      "goodAnswer": "900",
+      "badAnswers": ["1000", "999", "90", "500"]
+    }
+  },
+  "Lezalfos": {
+    "0": {
+      "question": "Combien de cœur sont consommés pour sortir l'épée de légende ?",
+      "imageName": "master_sword",
+      "goodAnswer": "12 3/4",
+      "badAnswers": ["12 1/4", "12 1/2", "Aucun, c'est Link après tout"]
+    },
+    "1": {
+      "question": "Ordrac, Nédrac, Rordrac sont respectivement les gardiens des sources :",
+      "imageName": "naydra",
+      "goodAnswer": "Force, Sagesse, Courage",
+      "badAnswers": ["Force, Courage, Sagesse", "Sagesse, Courage, Force", "Sagesse, Force, Courage", "Courage, Sagesse, Force", "Courage, Force, Sagesse"]
+    },
+    "2": {
+      "question": "Quels sont les personnes qui viennent aider Grossaillieh pour la construction du village d'Euzero ?",
+      "imageName": "tarrey_town",
+      "goodAnswer": "Shantieh, Kornuillieh, Klavieh et Pervieh",
+      "badAnswers": ["Santieh, Cornuillieh, Clavieh et Épervieh", "Mortieh, Sérasieh, Deza et Nad"]
+    },
+    "3": {
+      "question": "Quel est le nom complet du roi d'Hyrule ?",
+      "imageName": "king_rhoam",
+      "goodAnswer": "Rhoam Bosphoramus Hyrule",
+      "badAnswers": ["Romuald Bosphoramus Hyrule", "Rhum Bosphoramus Hyrule", "Gustave Bosphoramus Hyrule"]
+    },
+    "4": {
+      "question": "Où se trouve le cheval Alpha ?",
+      "imageName": "horse",
+      "goodAnswer": "Mont Satori",
+      "badAnswers": ["Ruines du parc Sandine", "Mont de la divinité équine", "Prairie d'Obbaba"]
+    },
+    "5": {
+      "question": "Quel compagnon peut-on avoir grâce aux Amiibo ?",
+      "imageName": "amiibo_bis",
+      "goodAnswer": "Épona et Link Loup",
+      "badAnswers": ["Épona", "Épona et Navi", "Link Loup et Midona", "Épona et Midona", "Un gardien"]
+    },
+    "6": {
+      "question": "Comment s'appelle le morse des sables de Riju ?",
+      "imageName": "morse",
+      "goodAnswer": "Madame Patricia",
+      "badAnswers": ["Patricia", "Demoiselle Patricia", "Patricia la belle gosse", "Miss patricia"]
+    }
+  },
+  "Lynel": {
+    "0": {
+      "question": "Comment s'appelle ce boss",
+      "imageName": "dlc_boss",
+      "goodAnswer": "Guide Miz'Kyosia",
+      "badAnswers": ["Sage Miz'Kyosia", "Sage Miz'Kyasi", "Guide Miz'Kyasi"]
+    },
+    "1": {
+      "question": "Quels sont les noms respectifs des fées ?",
+      "imageName": "great_fairies",
+      "goodAnswer": "Tera, Cotura, Mijah, Caesa",
+      "badAnswers": ["Caesa, Tera, Mijah, Cotura", "Mijah, Caesa, Tera, Cotura", "Tera, Mijah, Caesa, Cotura"]
+    },
+    "2": {
+      "question": "Combien d'harnachement pour chevaux existe-t'il ?",
+      "imageName": "horse_bis",
+      "goodAnswer": "8",
+      "badAnswers": ["4", "7", "10"]
+    },
+    "3": {
+      "question": "Comment obtient t-on la recette du Pilaf de volaille divine ?",
+      "imageName": "rito_village",
+      "goodAnswer": "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre.",
+      "badAnswers": ["Volaille divine, Boisseau de riz, Oeuf de volatile, Cristal de sel", "Volaille divine, Boisseau de riz, Oeuf de volatile, Motte de beurre, Viande."]
+    }
+  }
+}
