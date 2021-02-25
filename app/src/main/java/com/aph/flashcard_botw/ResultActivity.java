@@ -32,9 +32,16 @@ public class ResultActivity extends AppCompatActivity {
 
         int percent = goodAnswers * 100 / totalQuestion ;
 
-        if(percent > 50) {
+        if(percent == 100){
+            resultImageView.setImageResource(R.drawable.champions);
+        }
+        else if(percent > 50) {
             resultImageView.setImageResource(R.drawable.happy_zelda);
-        } else {
+        }
+        else if (percent > 0) {
+            resultImageView.setImageResource(R.drawable.sad_zelda);
+        }
+        else {
             resultImageView.setImageResource(R.drawable.zelda_cry);
         }
 
