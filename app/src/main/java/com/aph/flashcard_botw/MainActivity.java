@@ -18,10 +18,8 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final CustomDialog dialog = new CustomDialog(MainActivity.this);
                 dialog.show();
-
             }
         });
 
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         listButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, QuestionsListActivity.class);
                 startActivity(intent);
             }

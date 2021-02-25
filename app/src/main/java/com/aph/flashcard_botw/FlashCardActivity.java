@@ -44,27 +44,63 @@ public class FlashCardActivity extends AppCompatActivity {
 
         Intent srcIntent = getIntent();
         difficulty = srcIntent.getStringExtra("difficulty");
+        Boolean isOnlyOneQuestion = srcIntent.getBooleanExtra("isOnlyOneQuestion", true);
 
-        String string = "";
-        try {
-            InputStream inputStream = getAssets().open("questions.json");
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            string = new String(buffer);
-            JSONObject jsonObject = new JSONObject(string);
-            JSONObject questionListTemporary = jsonObject.getJSONObject(difficulty);
-            questionList= new ArrayList<JSONObject>();
-            for (int i = 0; i < questionListTemporary.length(); i++) {
-                questionList.add(questionListTemporary.getJSONObject(String.valueOf(i)));
+        if(isOnlyOneQuestion == false) {
+            String string = "";
+            try {
+                InputStream inputStream = getAssets().open("questions.json");
+                int size = inputStream.available();
+                byte[] buffer = new byte[size];
+                inputStream.read(buffer);
+                string = new String(buffer);
+                JSONObject jsonObject = new JSONObject(string);
+                JSONObject questionListTemporary = jsonObject.getJSONObject(difficulty);
+                questionList= new ArrayList<JSONObject>();
+                for (int i = 0; i < questionListTemporary.length(); i++) {
+                    questionList.add(questionListTemporary.getJSONObject(String.valueOf(i)));
+                }
+                Collections.shuffle(questionList);
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
             }
-            Collections.shuffle(questionList);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
+            displayQuestion();
+            addListenerOnButton();
         }
 
-        displayQuestion();
-        addListenerOnButton();
+        else{
+
+            Log.d("FlashCardFromList", "Start");
+            Questions q = srcIntent.getParcelableExtra("question");
+            Log.d("FlashCardFromList", "onCreate: " + q.getQuestion());
+
+            try {
+                String string = "";
+                InputStream inputStream = getAssets().open("questions.json");
+                int size = inputStream.available();
+                byte[] buffer = new byte[size];
+                inputStream.read(buffer);
+                string = new String(buffer);
+                JSONObject jsonObject = new JSONObject(string);
+
+                difficulty = q.getDifficulty();
+                JSONObject questionListTemporary = jsonObject.getJSONObject(difficulty);
+                questionList= new ArrayList<JSONObject>();
+                for (int i = 0; i < questionListTemporary.length(); i++) {
+                    JSONObject currentQuestion  =  questionListTemporary.getJSONObject(String.valueOf(i)) ;
+                    String questionTitle = currentQuestion.getString("question");
+                    Log.d("FlashCardFromList", questionTitle + "/" + q.getQuestion() );
+                    if(questionTitle.equals(q.getQuestion())){
+                        questionList.add(questionListTemporary.getJSONObject(String.valueOf(i)));
+                        break;
+                    }
+                }
+                displayQuestion();
+                addListenerOnButton();
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void displayQuestion() {
