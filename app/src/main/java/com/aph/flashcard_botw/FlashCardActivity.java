@@ -28,16 +28,19 @@ import java.util.Collections;
 public class FlashCardActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
-    private RadioButton answerButton;
     private Button nextQuestionButton;
-
+    private Button validateQuestionButton;
+    private Button resultQuestionButton;
+    private String goodAnswer;
+    private String image;
+    private JSONObject questionList;
+    private int questionIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_card);
 
-        JSONParser jsonP = new JSONParser();
         Intent srcIntent = getIntent();
         String difficulty = srcIntent.getStringExtra("difficulty");
 
@@ -48,22 +51,26 @@ public class FlashCardActivity extends AppCompatActivity {
             byte[] buffer = new byte[size];
             inputStream.read(buffer);
             string = new String(buffer);
-        } catch (IOException e) {
+            JSONObject jsonObject = new JSONObject(string);
+            questionList = jsonObject.getJSONObject(difficulty);
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-        try {
-            JSONObject jsonObject = new JSONObject(string);
-            JSONObject bokoblin = jsonObject.getJSONObject(difficulty);
-            Log.i("jsonobject", bokoblin + "");
 
-            JSONObject questionInfo = bokoblin.getJSONObject("0");
+        displayQuestion();
+        addListenerOnButton(goodAnswer, image);
+    }
+
+    public void displayQuestion() {
+        try {
+            JSONObject questionInfo = questionList.getJSONObject(String.valueOf(questionIndex));
 
             String question = questionInfo.getString("question");
 
             TextView questionText = findViewById(R.id.questionTextView);
             questionText.setText(question);
 
-            String goodAnswer = questionInfo.getString("goodAnswer");
+            goodAnswer = questionInfo.getString("goodAnswer");
             JSONArray badAnswers = questionInfo.getJSONArray("badAnswers");
             ArrayList <String> answers = new ArrayList<String>();
             answers.add(goodAnswer);
@@ -73,19 +80,20 @@ public class FlashCardActivity extends AppCompatActivity {
             Collections.shuffle(answers);
 
             RadioGroup answerRadioGroup = findViewById(R.id.answerRadioGroup);
+            answerRadioGroup.removeAllViews();
+            TextView responseTextView = findViewById(R.id.responseTextView);
+            responseTextView.setText("");
             for (int j = 0; j < answers.size(); j++) {
                 RadioButton answerButton = new RadioButton(this);
                 answerButton.setText(answers.get(j));
                 answerRadioGroup.addView(answerButton);
             }
 
-            String image = questionInfo.getString("imageName");
+            image = questionInfo.getString("imageName");
             ImageView questionImage = findViewById(R.id.imageButton);
             Context context = questionImage.getContext();
             int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
             questionImage.setImageResource(id);
-
-            addListenerOnButton(goodAnswer, image);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -94,9 +102,11 @@ public class FlashCardActivity extends AppCompatActivity {
 
     public void addListenerOnButton(String goodAnswer, String image) {
         radioGroup = (RadioGroup) findViewById(R.id.answerRadioGroup);
+        validateQuestionButton = (Button) findViewById(R.id.validateQuestionButton);
         nextQuestionButton = (Button) findViewById(R.id.nextQuestionButton);
+        resultQuestionButton = (Button) findViewById(R.id.resultQuestionButton);
 
-        nextQuestionButton.setOnClickListener(new View.OnClickListener() {
+        validateQuestionButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -120,6 +130,23 @@ public class FlashCardActivity extends AppCompatActivity {
                     responseTextView.setText("T'es pourri mec");
                 }
 
+                questionIndex ++;
+                validateQuestionButton.setVisibility(View.GONE);
+                if (questionIndex <= questionList.length()) {
+                    nextQuestionButton.setVisibility(View.VISIBLE);
+                }
+                else {
+                    resultQuestionButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        nextQuestionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextQuestionButton.setVisibility(View.GONE);
+                validateQuestionButton.setVisibility(View.VISIBLE);
+                displayQuestion();
             }
         });
 
