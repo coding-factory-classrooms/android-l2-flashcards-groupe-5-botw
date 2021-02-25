@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -18,6 +24,7 @@ public class ResultActivity extends AppCompatActivity {
         int totalQuestion = srcIntent.getIntExtra("totalQuestion", 0);
         int goodAnswers = srcIntent.getIntExtra("goodAnswers", 0);
         String difficulty = srcIntent.getStringExtra("difficulty");
+        int percent = ((goodAnswers / totalQuestion) * 100);
 
         ImageView resultImageView = findViewById(R.id.resultImageView);
         TextView difficultyTextView = findViewById(R.id.difficultyTextView);
@@ -28,14 +35,25 @@ public class ResultActivity extends AppCompatActivity {
 
         if(percent > 50) {
             resultImageView.setImageResource(R.drawable.happy_zelda);
-        }
-        else{
+        } else {
             resultImageView.setImageResource(R.drawable.zelda_cry);
         }
 
         difficultyTextView.setText("Difficulté : " + difficulty);
         totalTextView.setText(goodAnswers + "/" + totalQuestion);
-        percentTextView.setText(percent+ "% de bonne réponses");
+        percentTextView.setText(percent + "% de bonne réponses");
 
+        Button backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intentImage = new Intent(ResultActivity.this, MainActivity.class);
+                startActivity(intentImage);
+            }
+        });
     }
+
+
 }
