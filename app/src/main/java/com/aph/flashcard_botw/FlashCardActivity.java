@@ -58,10 +58,7 @@ public class FlashCardActivity extends AppCompatActivity {
             for (int i = 0; i < questionListTemporary.length(); i++) {
                 questionList.add(questionListTemporary.getJSONObject(String.valueOf(i)));
             }
-
-            Log.i("i", questionList +"");
             Collections.shuffle(questionList);
-            Log.i("i", questionList +"");
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
@@ -103,6 +100,9 @@ public class FlashCardActivity extends AppCompatActivity {
             Context context = questionImage.getContext();
             int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
             questionImage.setImageResource(id);
+
+            TextView indexTextView = findViewById(R.id.indexTextView);
+            indexTextView.setText((questionIndex+1) + "/" + questionList.size());
 
         } catch (JSONException e) {
             e.printStackTrace();

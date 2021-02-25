@@ -99,4 +99,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/link" />
 
+    <TextView
+        android:id="@+id/indexTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="1/6" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
