@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAE9E9"
+    android:background="@color/white"
     tools:context=".FlashCardActivity">
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="16dp"
         android:text="Valider"
-        app:backgroundTint="#B99F65"
+        app:backgroundTint="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
