@@ -21,8 +21,8 @@
         android:id="@+id/difficultyTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="difficulty"
         app:layout_constraintBottom_toTopOf="@+id/previewQuestionTextView"
         app:layout_constraintStart_toEndOf="@+id/questionImageView"
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/previewQuestionTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:text="preview question"
         app:layout_constraintBottom_toBottomOf="@+id/questionImageView"
