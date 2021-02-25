@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAE9E9"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <Button
@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:text="Start"
         android:textSize="36sp"
-        app:backgroundTint="#485CB8"
+        app:backgroundTint="@color/teal_master_sword"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -27,7 +27,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:text="About"
-        app:backgroundTint="#485CB8"
+        app:backgroundTint="@color/teal_master_sword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
