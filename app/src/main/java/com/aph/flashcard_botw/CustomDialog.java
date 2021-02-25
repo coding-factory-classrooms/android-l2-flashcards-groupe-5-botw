@@ -16,7 +16,7 @@ import javax.security.auth.login.LoginException;
 
 public class CustomDialog extends Dialog {
 
-
+    //Create a the flash Crad activity passing the difficulty
     public void difficultyChoose(String difficulty){
         Intent intent = new Intent(this.context, FlashCardActivity.class);
         intent.putExtra("difficulty", difficulty);
@@ -62,18 +62,13 @@ public class CustomDialog extends Dialog {
     private void buttonOKClick() {
         int radioButtonID = difficultyRatiopGroup.getCheckedRadioButtonId();
 
-        Log.i("DialogDifficulty", "RatioId: " + radioButtonID);
-
+        //Display toast if no radio checked
         if (radioButtonID == -1) {
-            Log.i("DialogDifficulty", "Enter if");
             Toast.makeText(this.context, "Veuillez choisir une réponse", Toast.LENGTH_SHORT).show();
-            Log.i("DialogDifficulty", "After toast");
             return;
         }
         RadioButton radioButton = difficultyRatiopGroup.findViewById(radioButtonID);
-        String selectedAnswer = (String) radioButton.getText();
-        Log.i("DialogDifficulty", "Difficulty: " + selectedAnswer);
-
+        String selectedAnswer = (String) radioButton.getText(); //Get the difficulty
         this.dismiss(); // Close Dialog
         this.difficultyChoose(selectedAnswer);
     }

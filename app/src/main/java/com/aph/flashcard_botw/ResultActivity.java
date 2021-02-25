@@ -24,14 +24,14 @@ public class ResultActivity extends AppCompatActivity {
         int totalQuestion = srcIntent.getIntExtra("totalQuestion", 0);
         int goodAnswers = srcIntent.getIntExtra("goodAnswers", 0);
         String difficulty = srcIntent.getStringExtra("difficulty");
+        int percent = goodAnswers * 100 / totalQuestion ;
 
         ImageView resultImageView = findViewById(R.id.resultImageView);
         TextView difficultyTextView = findViewById(R.id.difficultyTextView);
         TextView totalTextView = findViewById(R.id.totalTextView);
         TextView percentTextView = findViewById(R.id.percentTextView);
 
-        int percent = goodAnswers * 100 / totalQuestion ;
-
+        //Change the image depending of the percent of success
         if(percent == 100){
             resultImageView.setImageResource(R.drawable.champions);
         }
@@ -45,12 +45,12 @@ public class ResultActivity extends AppCompatActivity {
             resultImageView.setImageResource(R.drawable.zelda_cry);
         }
 
+        //Display the statistics
         difficultyTextView.setText("Difficulté : " + difficulty);
         totalTextView.setText(goodAnswers + "/" + totalQuestion);
         percentTextView.setText(percent + "% de bonne réponses");
 
         Button backButton = findViewById(R.id.backButton);
-
         backButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

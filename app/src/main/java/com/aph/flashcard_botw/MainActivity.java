@@ -32,15 +32,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Button to display the about page
         Button aboutButton = findViewById(R.id.aboutButton);
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = new User("Marion Triforce du Courage, Alyssia Triforce de la Sagesse et Juan Triforce de la Force");
-
                 Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-                intent.putExtra("author", user);
-                intent.putExtra("versionName", "v1.2.3");
                 startActivity(intent);
             }
         });

@@ -45,6 +45,7 @@ public class QuestionsListActivity extends AppCompatActivity {
             JSONObject lezalfosQuestion = jsonObject.getJSONObject("Lezalfos");
             JSONObject lynelQuestion = jsonObject.getJSONObject("Lynel");
 
+            //Add all the questions in an ArrayList
             questionList= new ArrayList<JSONObject>();
             for (int i = 0; i < bokoblinQuestion.length(); i++) {
                 JSONObject jsonQuestion = bokoblinQuestion.getJSONObject(String.valueOf(i));
