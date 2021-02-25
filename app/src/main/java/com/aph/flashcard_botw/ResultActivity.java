@@ -24,7 +24,6 @@ public class ResultActivity extends AppCompatActivity {
         int totalQuestion = srcIntent.getIntExtra("totalQuestion", 0);
         int goodAnswers = srcIntent.getIntExtra("goodAnswers", 0);
         String difficulty = srcIntent.getStringExtra("difficulty");
-        int percent = ((goodAnswers / totalQuestion) * 100);
 
         ImageView resultImageView = findViewById(R.id.resultImageView);
         TextView difficultyTextView = findViewById(R.id.difficultyTextView);
