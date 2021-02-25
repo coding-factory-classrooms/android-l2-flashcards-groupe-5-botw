@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = new User("Marion, Alyssia et Juan");
+                User user = new User("Marion Triforce du Courage, Alyssia Triforce de la Sagesse et Juan Triforce de la Force");
 
                 Intent intent = new Intent(MainActivity.this, AboutActivity.class);
                 intent.putExtra("author", user);
