@@ -1,10 +1,12 @@
 package com.aph.flashcard_botw;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,7 +19,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +30,7 @@ public class FlashCardActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton answerButton;
     private Button nextQuestionButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,19 +78,19 @@ public class FlashCardActivity extends AppCompatActivity {
             }
 
             String image = questionInfo.getString("imageName");
-            ImageView questionImage = findViewById(R.id.imageView);
+            ImageView questionImage = findViewById(R.id.imageButton);
             Context context = questionImage.getContext();
             int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
             questionImage.setImageResource(id);
 
-            addListenerOnButton(goodAnswer);
+            addListenerOnButton(goodAnswer, image);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
-    public void addListenerOnButton(String goodAnswer) {
+    public void addListenerOnButton(String goodAnswer, String image) {
         radioGroup = (RadioGroup) findViewById(R.id.answerRadioGroup);
         nextQuestionButton = (Button) findViewById(R.id.nextQuestionButton);
 
@@ -116,6 +118,16 @@ public class FlashCardActivity extends AppCompatActivity {
                     responseTextView.setText("T'es pourri mec");
                 }
 
+            }
+        });
+
+        ImageButton enlargeImage = findViewById(R.id.imageButton);
+        enlargeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentImage = new Intent(FlashCardActivity.this, EnlargedImageActivity.class);
+                intentImage.putExtra("imageName", image);
+                startActivity(intentImage);
             }
         });
     }
