@@ -14,7 +14,7 @@ public class Questions implements Parcelable {
         difficulty = in.readString();
     }
 
-    public Questions(Object imageName, Object question, String bokoblin) {
+    public Questions(int imageId, String question, String difficulty) {
         this.imageId = imageId;
         this.question = (String) question;
         this.difficulty = difficulty;

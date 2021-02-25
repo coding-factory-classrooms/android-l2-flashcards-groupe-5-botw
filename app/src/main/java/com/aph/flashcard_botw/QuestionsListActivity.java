@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -23,6 +24,7 @@ public class QuestionsListActivity extends AppCompatActivity {
     private QuestionAdapter adapter;
     private String difficulty;
     private ArrayList questionList;
+    //private ArrayList questions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +48,29 @@ public class QuestionsListActivity extends AppCompatActivity {
             questionList= new ArrayList<JSONObject>();
             for (int i = 0; i < bokoblinQuestion.length(); i++) {
                 JSONObject jsonQuestion = bokoblinQuestion.getJSONObject(String.valueOf(i));
-                questions.add(new Questions(jsonQuestion.get("imageName"), jsonQuestion.get("question"), "Bokoblin"));
+                String imageName =jsonQuestion.getString("imageName");
+                int id = this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
+                questions.add(new Questions(id, jsonQuestion.getString("question"), "Bokoblin"));
             }
             for (int i = 0; i < lezalfosQuestion.length(); i++) {
-                questionList.add(lezalfosQuestion.getJSONObject(String.valueOf(i)));
+                JSONObject jsonQuestion = lezalfosQuestion.getJSONObject(String.valueOf(i));
+                String imageName =jsonQuestion.getString("imageName");
+                int id = this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
+                questions.add(new Questions(id, jsonQuestion.getString("question"), "Lezalfos"));
             }
             for (int i = 0; i < lynelQuestion.length(); i++) {
-                questionList.add(lynelQuestion.getJSONObject(String.valueOf(i)));
+                JSONObject jsonQuestion = lynelQuestion.getJSONObject(String.valueOf(i));
+                String imageName =jsonQuestion.getString("imageName");
+                int id = this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
+                questions.add(new Questions(id, jsonQuestion.getString("question"), "Lynel"));
             }
+
             Log.i("questionList", questionList + "");
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+
+        adapter = new QuestionAdapter(questions);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
