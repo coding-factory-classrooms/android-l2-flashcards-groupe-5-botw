@@ -58,7 +58,7 @@ public class FlashCardActivity extends AppCompatActivity {
         }
 
         displayQuestion();
-        addListenerOnButton(goodAnswer, image);
+        addListenerOnButton();
     }
 
     public void displayQuestion() {
@@ -100,7 +100,7 @@ public class FlashCardActivity extends AppCompatActivity {
         }
     }
 
-    public void addListenerOnButton(String goodAnswer, String image) {
+    public void addListenerOnButton() {
         radioGroup = (RadioGroup) findViewById(R.id.answerRadioGroup);
         validateQuestionButton = (Button) findViewById(R.id.validateQuestionButton);
         nextQuestionButton = (Button) findViewById(R.id.nextQuestionButton);
@@ -122,6 +122,8 @@ public class FlashCardActivity extends AppCompatActivity {
                 String selectedAnswer = (String) radioButton.getText();
 
                 TextView responseTextView = findViewById(R.id.responseTextView);
+
+                Log.i("goodAnswer", goodAnswer +"");
 
                 if (selectedAnswer == goodAnswer) {
                     responseTextView.setText("Tintintintin");
