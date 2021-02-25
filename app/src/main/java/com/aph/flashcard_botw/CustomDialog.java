@@ -18,9 +18,9 @@ public class CustomDialog extends Dialog {
 
 
     public void difficultyChoose(String difficulty){
-        Log.i("dialog", difficulty);
         Intent intent = new Intent(this.context, FlashCardActivity.class);
         intent.putExtra("difficulty", difficulty);
+        intent.putExtra("isOnlyOneQuestion", false);
         this.context.startActivity(intent);
     };
 
