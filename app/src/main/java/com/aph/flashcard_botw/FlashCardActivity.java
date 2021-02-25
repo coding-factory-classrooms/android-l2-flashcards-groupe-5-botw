@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class FlashCardActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class FlashCardActivity extends AppCompatActivity {
     private Button resultQuestionButton;
     private String goodAnswer;
     private String image;
-    private JSONObject questionList;
+    private ArrayList<JSONObject> questionList;
     private int questionIndex = 0;
 
     @Override
@@ -52,7 +53,15 @@ public class FlashCardActivity extends AppCompatActivity {
             inputStream.read(buffer);
             string = new String(buffer);
             JSONObject jsonObject = new JSONObject(string);
-            questionList = jsonObject.getJSONObject(difficulty);
+            JSONObject questionListTemporary = jsonObject.getJSONObject(difficulty);
+            questionList= new ArrayList<JSONObject>();
+            for (int i = 0; i < questionListTemporary.length(); i++) {
+                questionList.add(questionListTemporary.getJSONObject(String.valueOf(i)));
+            }
+
+            Log.i("i", questionList +"");
+            Collections.shuffle(questionList);
+            Log.i("i", questionList +"");
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
@@ -63,7 +72,7 @@ public class FlashCardActivity extends AppCompatActivity {
 
     public void displayQuestion() {
         try {
-            JSONObject questionInfo = questionList.getJSONObject(String.valueOf(questionIndex));
+            JSONObject questionInfo = questionList.get(questionIndex);
 
             String question = questionInfo.getString("question");
 
@@ -134,7 +143,7 @@ public class FlashCardActivity extends AppCompatActivity {
 
                 questionIndex ++;
                 validateQuestionButton.setVisibility(View.GONE);
-                if (questionIndex <= questionList.length()) {
+                if (questionIndex < questionList.size()) {
                     nextQuestionButton.setVisibility(View.VISIBLE);
                 }
                 else {
