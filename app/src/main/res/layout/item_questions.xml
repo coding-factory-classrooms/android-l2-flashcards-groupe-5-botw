@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootItem"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="90dp">
 
     <ImageView
         android:id="@+id/questionImageView"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/previewQuestionTextView"
-        android:layout_width="260dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="preview question"
         app:layout_constraintBottom_toBottomOf="@+id/questionImageView"
