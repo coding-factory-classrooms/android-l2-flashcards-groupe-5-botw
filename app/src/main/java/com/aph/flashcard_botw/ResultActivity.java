@@ -24,7 +24,7 @@ public class ResultActivity extends AppCompatActivity {
         TextView totalTextView = findViewById(R.id.totalTextView);
         TextView percentTextView = findViewById(R.id.percentTextView);
 
-        int percent = goodAnswers / totalQuestion * 100;
+        int percent = goodAnswers * 100 / totalQuestion ;
 
         if(percent > 50) {
             resultImageView.setImageResource(R.drawable.happy_zelda);
