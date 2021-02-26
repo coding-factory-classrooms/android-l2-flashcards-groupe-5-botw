@@ -40,7 +40,6 @@ public class FlashCardActivity extends AppCompatActivity {
     private int goodAnswersTotal = 0;
     private String difficulty;
     private SoundPool sounds;
-    private int sExplosion;
     //declare variables
 
     @Override
