@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.aph.flashcard_botw</OriginalElement>
+  <nodes>
+    <node x="254.0" y="771.0">com.aph.flashcard_botw.ExampleUnitTest</node>
+    <node x="570.0" y="457.0">com.aph.flashcard_botw.BuildConfig</node>
+    <node x="0.0" y="457.0">com.aph.flashcard_botw.CustomDialog</node>
+    <node x="0.0" y="0.0">com.aph.flashcard_botw.QuestionAdapter</node>
+    <node x="0.0" y="869.0">com.aph.flashcard_botw.MainActivity</node>
+    <node x="97.0" y="273.0">com.aph.flashcard_botw.QuestionAdapter.ViewHolder</node>
+    <node x="0.0" y="771.0">com.aph.flashcard_botw.ExampleInstrumentedTest</node>
+    <node x="502.0" y="771.0">com.aph.flashcard_botw.EnlargedImageActivity</node>
+    <node x="306.0" y="457.0">com.aph.flashcard_botw.QuestionsListActivity</node>
+    <node x="405.0" y="0.0">com.aph.flashcard_botw.FlashCardActivity</node>
+    <node x="742.0" y="771.0">com.aph.flashcard_botw.ResultActivity</node>
+    <node x="813.0" y="457.0">com.aph.flashcard_botw.AboutActivity</node>
+    <node x="732.0" y="0.0">com.aph.flashcard_botw.Questions</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.aph.flashcard_botw.QuestionAdapter.ViewHolder" target="com.aph.flashcard_botw.QuestionAdapter">
+      <point x="0.0" y="-69.5" />
+      <point x="0.0" y="111.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="224.5" y="186.0" />
+  <SelectedNodes>
+    <node>com.aph.flashcard_botw.QuestionsListActivity</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
