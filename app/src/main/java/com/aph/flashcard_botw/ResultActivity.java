@@ -48,21 +48,18 @@ public class ResultActivity extends AppCompatActivity {
         }
         else if(percent > 50) {
             resultImageView.setImageResource(R.drawable.happy_zelda);
-            resultImageView.setImageResource(R.drawable.champions);
             sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
             MediaPlayer song = MediaPlayer.create(context, R.raw.result_3);
             song.start();
         }
         else if (percent > 0) {
             resultImageView.setImageResource(R.drawable.sad_zelda);
-            resultImageView.setImageResource(R.drawable.champions);
             sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
             MediaPlayer song = MediaPlayer.create(context, R.raw.result_2);
             song.start();
         }
         else {
             resultImageView.setImageResource(R.drawable.zelda_cry);
-            resultImageView.setImageResource(R.drawable.champions);
             sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
             MediaPlayer song = MediaPlayer.create(context, R.raw.result_1);
             song.start();
