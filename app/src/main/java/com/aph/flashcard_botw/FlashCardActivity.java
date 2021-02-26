@@ -2,6 +2,9 @@ package com.aph.flashcard_botw;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +39,8 @@ public class FlashCardActivity extends AppCompatActivity {
     private int questionIndex = 0;
     private int goodAnswersTotal = 0;
     private String difficulty;
+    private SoundPool sounds;
+    //declare variables
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,11 +185,18 @@ public class FlashCardActivity extends AppCompatActivity {
 
                 //Check if the user answer is correct
                 if (selectedAnswer == goodAnswer) {
-                    responseTextView.setText("Tintintintin");
+                    responseTextView.setText("Bravo BG, toi t'es un héro élu des déesses ça se voit");
+                    sounds = new SoundPool(10,AudioManager.STREAM_MUSIC,0);
+                    Context context = responseTextView.getContext();
+                    MediaPlayer song = MediaPlayer.create(context, R.raw.succes_oot);
+                    song.start();
                     goodAnswersTotal++; //Increment the total of good answers
                 }
                 else {
                     responseTextView.setText("T'es trop faible, va faire des sanctuaires et reviens après ! \n C'était : "+ goodAnswer);
+                    Context context = responseTextView.getContext();
+                    MediaPlayer song = MediaPlayer.create(context, R.raw.error_tp);
+                    song.start();
                 }
 
                 questionIndex ++; //Increment the current question index

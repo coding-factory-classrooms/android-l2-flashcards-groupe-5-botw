@@ -2,7 +2,11 @@ package com.aph.flashcard_botw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
+
+    private String difficulty;
+    private SoundPool sounds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +37,35 @@ public class ResultActivity extends AppCompatActivity {
         TextView difficultyTextView = findViewById(R.id.difficultyTextView);
         TextView totalTextView = findViewById(R.id.totalTextView);
         TextView percentTextView = findViewById(R.id.percentTextView);
+        Context context = resultImageView.getContext();
 
         //Change the image depending of the percent of success
         if(percent == 100){
             resultImageView.setImageResource(R.drawable.champions);
+            sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
+            MediaPlayer song = MediaPlayer.create(context, R.raw.result_4);
+            song.start();
         }
         else if(percent > 50) {
             resultImageView.setImageResource(R.drawable.happy_zelda);
+            resultImageView.setImageResource(R.drawable.champions);
+            sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
+            MediaPlayer song = MediaPlayer.create(context, R.raw.result_3);
+            song.start();
         }
         else if (percent > 0) {
             resultImageView.setImageResource(R.drawable.sad_zelda);
+            resultImageView.setImageResource(R.drawable.champions);
+            sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
+            MediaPlayer song = MediaPlayer.create(context, R.raw.result_2);
+            song.start();
         }
         else {
             resultImageView.setImageResource(R.drawable.zelda_cry);
+            resultImageView.setImageResource(R.drawable.champions);
+            sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
+            MediaPlayer song = MediaPlayer.create(context, R.raw.result_1);
+            song.start();
         }
 
         //Display the statistics
